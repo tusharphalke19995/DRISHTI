@@ -1,0 +1,41 @@
+.verification-container {
+    padding: 78px 104px;
+    text-align: center;
+    display: grid;
+    place-content: center;
+  
+    .verification-text {
+      font: normal normal 600 20px/24px Inter;
+      margin-bottom: 44px;
+  
+      h5 {
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+  
+      body1 {
+        font-weight: normal;
+      }
+    }
+  
+    .verification-box {
+      width: 350px;
+      height: 350px;
+      background-image: url('../../../assets/scanner-ouline.svg');
+      background-size: cover;
+      display: grid;
+      place-content: center;
+      margin: auto;
+    }
+  
+    @media (max-width: 960px) {
+      padding: 40px 20px;
+  
+      .verification-box {
+        width: 100%;
+        height: auto;
+        background-size: contain;
+      }
+    }
+  }
+  

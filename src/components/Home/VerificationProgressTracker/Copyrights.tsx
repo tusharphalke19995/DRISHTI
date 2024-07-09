@@ -7,7 +7,7 @@ function Copyrights(props: any) {
         <CopyrightsContainer>
             <Divider style={{width: '40vw'}}/>
             <CopyrightsContent>
-                2024 © MOSIP - All rights reserved.
+                2024 ©  All rights reserved.
             </CopyrightsContent>
         </CopyrightsContainer>
     );

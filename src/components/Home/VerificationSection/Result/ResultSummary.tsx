@@ -34,7 +34,7 @@ const ResultSummary = ({success}: {
                             font: "normal normal bold 20px/24px Inter",
                             margin: "7px auto"
                         }}>
-                            Results
+                            Document Details
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>

@@ -1,0 +1,40 @@
+.vc-display-card {
+    padding: 20px;
+  
+    .centered-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+  
+    .VcProperty {
+      margin-bottom: 15px;
+    }
+  
+    .VcPropertyKey {
+      font-weight: bold;
+      color: #333;
+    }
+  
+    .VcPropertyValue {
+      color: #555;
+    }
+  
+    .vc-verification-failed-container {
+      text-align: center;
+      color: #CB4242;
+      font-size: 1.2rem;
+      margin-top: 20px;
+  
+      .MuiSvgIcon-root {
+        margin-bottom: 8px;
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .vc-display-card {
+      padding: 15px;
+    }
+  }
+  

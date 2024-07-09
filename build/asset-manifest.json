@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.f855e6bc.css",
-    "main.js": "/static/js/main.6e04bd0e.js",
-    "static/js/453.737544d5.chunk.js": "/static/js/453.737544d5.chunk.js",
+    "main.css": "/static/css/main.d35fc63e.css",
+    "main.js": "/static/js/main.6ce47b2b.js",
+    "static/js/453.a29603dd.chunk.js": "/static/js/453.a29603dd.chunk.js",
+    "static/media/drishti_content.svg": "/static/media/drishti_content.ccf7dc5907264420fcb4df53c63614d1.svg",
+    "static/media/drishti.svg": "/static/media/drishti.af3401deb99377a481247b72df2efed0.svg",
     "static/media/under_construction.svg": "/static/media/under_construction.1bb28b1e103dbe157fab10714d976f6a.svg",
     "static/media/inji-logo.svg": "/static/media/inji-logo.c98867237ee5f6cf0f48396eaea352f3.svg",
     "static/media/verification-failed-icon.svg": "/static/media/verification-failed-icon.d7f653aae41f4950615e7dce8b378c53.svg",
     "static/media/verification-success-icon.svg": "/static/media/verification-success-icon.2f45e1c14666254f413f7a255442d253.svg",
-    "static/media/scanner-ouline.svg": "/static/media/scanner-ouline.e584c11fd3dd4ecfa9b3dd494c874332.svg",
-    "static/media/qr.svg": "/static/media/qr.2b4839867af5a7308a12a22cc224438d.svg",
+    "static/media/scanner-ouline.svg": "/static/media/scanner-ouline.84cd3f99108db1622d16.svg",
     "index.html": "/index.html",
-    "main.f855e6bc.css.map": "/static/css/main.f855e6bc.css.map",
-    "main.6e04bd0e.js.map": "/static/js/main.6e04bd0e.js.map",
-    "453.737544d5.chunk.js.map": "/static/js/453.737544d5.chunk.js.map"
+    "static/media/btnqr.svg": "/static/media/btnqr.2b405166df48b1122c240f4d6fd68204.svg",
+    "main.d35fc63e.css.map": "/static/css/main.d35fc63e.css.map",
+    "main.6ce47b2b.js.map": "/static/js/main.6ce47b2b.js.map",
+    "453.a29603dd.chunk.js.map": "/static/js/453.a29603dd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.6e04bd0e.js"
+    "static/css/main.d35fc63e.css",
+    "static/js/main.6ce47b2b.js"
   ]
 }

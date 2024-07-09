@@ -3,6 +3,7 @@ import {Scanner} from '@yudiel/react-qr-scanner';
 import CameraAccessDenied from "./CameraAccessDenied";
 import {ScanSessionExpiryTime, VerificationSteps} from "../../../utils/config";
 import {useAlertMessages} from "../../../pages/Home";
+import Loader from '../../commons/Loader';
 
 let timer: NodeJS.Timeout;
 
@@ -36,6 +37,7 @@ function QrScanner({setActiveStep, setQrData}: {
             if (svgElements.length === 1) {
                 svgElements[0].style.display = 'none';
             }
+            
         }
     }, [scannerRef]);
 
