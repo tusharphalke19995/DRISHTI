@@ -34,3 +34,9 @@ export type AlertInfo = {
     severity?: AlertSeverity,
     open?: boolean
 }
+
+
+export type ConstituteElementCaseDataType = {
+    id: String,
+    item: String
+}
