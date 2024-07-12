@@ -35,8 +35,15 @@ export type AlertInfo = {
     open?: boolean
 }
 
-
 export type ConstituteElementCaseDataType = {
-    id: String,
-    item: String
+    id: string,
+    item: string
+}
+
+export type CaseNotesDataType = {
+    id: string,
+    notes: string,
+    createdAt: Date,
+    submittedBy: string,
+    constituents: Array<String>
 }

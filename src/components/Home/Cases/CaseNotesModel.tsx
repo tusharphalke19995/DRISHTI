@@ -37,15 +37,16 @@ const style = {
 type CaseModelProp = {
   open: boolean, 
   handleClose: () => void, 
-  handleElementList: () => void
+  handleElementList: () => void,
+  handleSubmit: (notes: string) => void
 }
 
-const CaseNotesModel = ({ open, handleClose, handleElementList }: CaseModelProp) =>  {
+const CaseNotesModel = ({ open, handleClose, handleElementList, handleSubmit }: CaseModelProp) =>  {
+
   const [note, setNote] = useState<string>("")
 
   const submitCaseNote = () => {
-    console.log("submitCaseNote", note);
-    handleClose();
+     handleSubmit(note);
   }
 
   return (

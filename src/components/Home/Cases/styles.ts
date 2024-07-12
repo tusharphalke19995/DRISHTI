@@ -47,6 +47,7 @@ export const InfoContainer = styled(Box)`
   padding: 8px;
   background: #ecf3fd;
   border-radius: 4px;
+  margin-bottom: 10px;
 `;
 
 export const InfoText = styled(Typography)`
@@ -67,5 +68,4 @@ export const ListItemText = styled(Typography)`
   font-size: 14px;
   font-weight: 400;
   color: #3d3c3c;
-  margin-left: 10px;
 `;

@@ -18,6 +18,7 @@ let alert: AlertInfo = { open: false };
 let setAlertInfo: React.Dispatch<React.SetStateAction<AlertInfo>> = (
   value
 ) => {};
+
 const AlertsContext = createContext({ alertInfo: alert, setAlertInfo });
 export const useAlertMessages = () => useContext(AlertsContext);
 

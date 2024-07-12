@@ -16,7 +16,6 @@ const router = createBrowserRouter([
         element: <Offline/>
     },
     {
-
         path: '/cases',
         element: <Case />
     }

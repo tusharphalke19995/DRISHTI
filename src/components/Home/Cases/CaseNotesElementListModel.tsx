@@ -7,7 +7,8 @@ import {
   List,
   ListItem,
   ListItemIcon,
-  Typography
+  Typography,
+  Checkbox
 } from '@mui/material';
 import { 
   CaseNotesContainerTop, 
@@ -15,7 +16,7 @@ import {
   ListItemText,
   ListContainer,
   Title } from './styles';
-import { Close } from '@mui/icons-material';
+import { CheckBox, CheckRounded, Close } from '@mui/icons-material';
 import CheckIcon from '@mui/icons-material/Check';
 import { CONSTITUTION_ELEMENT_CASE_DATA } from '../../../utils/samples';
 import { ConstituteElementCaseDataType } from '../../../types/data-types';
@@ -44,10 +45,11 @@ const style = {
 type CaseNotesElementListModelProp = {
   open: boolean, 
   title: string,
-  handleClose: () => void
+  handleClose: () => void,
+  handleElementItemCheck: (event: React.ChangeEvent<HTMLInputElement>) => void
 };
 
-const CaseNotesElementListModel = ({ open, title, handleClose }: CaseNotesElementListModelProp) =>  {
+const CaseNotesElementListModel = ({ open, title, handleClose, handleElementItemCheck }: CaseNotesElementListModelProp) =>  {
   const [constituteElementData] = React.useState(CONSTITUTION_ELEMENT_CASE_DATA);
 
   return (
@@ -69,12 +71,17 @@ const CaseNotesElementListModel = ({ open, title, handleClose }: CaseNotesElemen
           <ListContainer>
             <List sx={{ width: '100%', height: '100%', overflowY: 'scroll', scrollbarWidth: 'none'}}>
               {constituteElementData.map((data: ConstituteElementCaseDataType, index: number) => (
-                <ListItem key={index}>
-                  <ListItemIcon>
-                    <CheckIcon sx={{ color: '#3D3C3C'}} />
-                  </ListItemIcon>
+                <ListItem key={data.id}>
+                  <div style={{ alignSelf: 'flex-start', marginRight: 10 }}>
+                    <Checkbox
+                      key={data.id}
+                      id={data.id}
+                      checkedIcon = {<CheckIcon sx={{ color: '#3D3C3C'}} />}
+                      onChange={handleElementItemCheck}
+                    />
+                  </div>
                   <ListItemText>
-                    <Typography variant="body1">{data.item}</Typography>
+                    <Typography variant="body2">{data.item}</Typography>
                   </ListItemText>
                 </ListItem>
               ))}
