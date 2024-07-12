@@ -42,7 +42,7 @@ const Result = ({vc, setActiveStep, vcStatus}: {
             </ResultsSummaryContainer>
             <VcDisplayCardContainer
                 style={{position: "absolute"}}
-                cardPositioning={{top: vcDisplayCardPositioning.top, right: vcDisplayCardPositioning.right}}>
+                cardPositioning={{top: vcDisplayCardPositioning.top, right: vcDisplayCardPositioning.right,left: vcDisplayCardPositioning.left}}>
                 <VcDisplayCard vc={vc} setActiveStep={setActiveStep}/>
             </VcDisplayCardContainer>
         </Box>

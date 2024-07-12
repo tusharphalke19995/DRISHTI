@@ -25,7 +25,7 @@ const Verification = ({ setQrData }: { setQrData: SetQrDataFunction }) => {
                     Verification in Progress
                 </Typography>
                 <Typography variant="body1">
-                    This verification will take some time, please don’t close the browser.
+                Verification is in progress. This may take a while, so please keep your browser open.
                 </Typography>
             </Grid>
             <Grid item xs={12}>

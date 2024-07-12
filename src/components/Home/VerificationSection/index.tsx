@@ -86,22 +86,22 @@ const DisplayActiveStep = () => {
 }
 
 const VerificationSection = () => {
-    const [isCaseNoteOpen, setIsCaseNoteOpen] = useState(false)
-    const [isElementListOpen, setIsElementListOpen] = useState(false)
+    // const [isCaseNoteOpen, setIsCaseNoteOpen] = useState(false)
+    // const [isElementListOpen, setIsElementListOpen] = useState(false)
 
     return (
         <div>
-            <Button
+            {/* <Button
                 sx={{ top: 20, left: 20 }}
                 color="primary"
                 variant='contained'
                 size="small"
                 onClick={() => setIsCaseNoteOpen(true)}            >
                 Add Notes
-            </Button>
+            </Button> */}
             <DisplayActiveStep />
 
-            <CaseNotesModel
+            {/* <CaseNotesModel
                 open={isCaseNoteOpen}
                 handleClose={() => setIsCaseNoteOpen(false)}
                 handleElementList={() => {
@@ -113,7 +113,7 @@ const VerificationSection = () => {
                 open={isElementListOpen}
                 title='Constituent Elements for NIA138 Cases'
                 handleClose={() => setIsElementListOpen(false)}
-            />
+            /> */}
         </div>
     );
 }

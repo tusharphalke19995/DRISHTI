@@ -4,6 +4,7 @@ import './App.css';
 import Home from "./pages/Home";
 import Offline from "./pages/Offline";
 import {RouterProvider, createBrowserRouter} from "react-router-dom";
+import Case from './components/Home/Cases/Case';
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,11 @@ const router = createBrowserRouter([
     {
         path: '/offline',
         element: <Offline/>
+    },
+    {
+
+        path: '/cases',
+        element: <Case />
     }
 ])
 

@@ -4,18 +4,20 @@ import {Box, Grid, Typography} from "@mui/material";
 export const ResultsSummaryContainer = styled(Box)(({success}: { success: boolean }) => (
     {
         height: "340px",
-        backgroundColor: success ? "#4B9D1F" : "#CB4242",
-        color: "white"
+        // backgroundColor: success ? "#007E7E" : "#CB4242",
+        // color: "white"
     }
 ));
 
 export const VcDisplayCardContainer = styled(Box)(({cardPositioning}: {
-        cardPositioning: { top?: number, right?: number }
+        cardPositioning: { top?: number, right?: number ,left?:number}
     }) => (
         {
             margin: "auto",
-            top: cardPositioning.top ?? 212,
-            right: cardPositioning.right ?? 0,
+            top: cardPositioning.top ?? 0,
+            right: cardPositioning.right ?? 6,
+            left:cardPositioning.left ?? 6
+            
             // position: "absolute"
         }
     )
@@ -30,6 +32,8 @@ export const VcDisplay = styled(Grid)`
     box-shadow: 0 3px 15px #0000000F;
     max-height: 320px;
     overflow-y: hidden;
+    margin-bottom: 12px;
+
 `
 
 export const VcProperty = styled(Grid)`
