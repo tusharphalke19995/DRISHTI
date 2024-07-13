@@ -167,9 +167,9 @@ const Case = () => {
                 <Grid container spacing={1} my={1}>
                     <Grid item xs={12} lg={9}>
                         <div className="flex flex-col lg:flex-row items-center">
-                            <Typography variant="h5" className="font-medium">Aparna VS Subarna</Typography>
-                            <span className="text-gray-600 mx-2">| NIA138</span>
-                            <span className="text-gray-600 mx-2">| Summons</span>
+                            <Typography variant="h5" className="font-bold text-2xl">Aparna VS Subarna</Typography>
+                            <span className="text-gray-400 mx-2">| NIA138</span>
+                            <span className="text-gray-400">| Summons</span>
                         </div>
                     </Grid>
                     <Grid item xs={12} lg={3}>

@@ -1,11 +1,14 @@
 import React, { memo, useContext, useState } from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import {
+  Tabs,
+  Tab,
+  Box,
+  Button
+} from '@mui/material';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { CaseNotesContext } from './Case';
 import { CaseNotesDataType } from '../../../types/data-types';
+import './CaseTab.css'
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -51,17 +54,17 @@ const CaseTab = memo(function CaseTab() {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab className="custom-tabs"  label="Overview" {...a11yProps(0)} />
-          <Tab className="custom-tabs" label="Case File" {...a11yProps(1)} />
-          <Tab className="custom-tabs" label="Hearings" {...a11yProps(2)} />
-          <Tab className="custom-tabs" label="Submissions" {...a11yProps(3)} />
+        <Tabs value={value} onChange={handleChange} variant='scrollable' scrollButtons="auto" aria-label="basic tabs example">
+          <Tab className="custom-tabs tab" label="Overview" {...a11yProps(0)} />
+          <Tab className="custom-tabs tab" label="Case File" {...a11yProps(1)} />
+          <Tab className="custom-tabs tab" label="Hearings" {...a11yProps(2)} />
+          <Tab className="custom-tabs tab" label="Submissions" {...a11yProps(3)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <div className="grid grid-cols-12 border-gray-200 p-4">
+        <div className="grid grid-cols-12 p-4 border border-gray-200 rounded-sm">
           <div className="col-span-12 lg:col-span-6">
-            <h6 className="text-2xl font-medium">Case File</h6>
+            <h6 className="text-2xl font-medium">Overview</h6>
           </div>
           <div className="col-span-12 lg:col-span-6 text-right">
             <Button variant="contained" className="add-note">
@@ -99,7 +102,7 @@ const CaseTab = memo(function CaseTab() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <div className="grid grid-cols-12 border-gray-200 p-4">
+        <div className="grid grid-cols-12 border border-gray-200 rounded-sm p-4">
           <div className="col-span-12 lg:col-span-6">
             <h6 className="text-2xl font-medium">Case File</h6>
           </div>
@@ -139,7 +142,7 @@ const CaseTab = memo(function CaseTab() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <div className="grid grid-cols-12 border-gray-200 p-4">
+        <div className="grid grid-cols-12 border border-gray-200 rounded-sm p-4">
           <div className="col-span-12 lg:col-span-6">
             <h6 className="text-2xl font-medium">Hearings To Review(6)</h6>
           </div>
@@ -179,8 +182,8 @@ const CaseTab = memo(function CaseTab() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <div className="grid grid-cols-12 border-gray-200 p-4">
-          <div className={"col-span-12 " + caseNotes && caseNotes.length <=3 ? "lg:col-span-12" : "lg:col-span-6" }>
+        <div className="grid grid-cols-12 border border-gray-200 rounded-sm p-4">
+          <div className={"col-span-12" + (caseNotes && caseNotes.length <=3 ? " lg:col-span-12" : " lg:col-span-6") }>
             <h6 className="text-2xl font-medium">Submissions To Review ({caseNotes.length || 0})</h6>
           </div>
           { caseNotes && caseNotes.length > 3 && <div className={"col-span-12 lg:col-span-6 text-right"}>
