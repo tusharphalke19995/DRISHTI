@@ -12,6 +12,13 @@ export const VerificationSteps = {
     DisplayResult: 3
 }
 
+export const ScanStatusResult = {
+    Failed: "try_Again",
+    Loading: "loading",
+    CertificateValid: "certificate_valid",
+    CertificateInValid: "certificate_invalid"
+}
+
 export const AlertMessages = {
     qrUploadSuccess: {message: "QR code uploaded successfully!", severity: "success"} as AlertInfo,
     sessionExpired: {message: "The scan session has expired due to inactivity. Please initiate a new scan.", severity: "error"} as AlertInfo,

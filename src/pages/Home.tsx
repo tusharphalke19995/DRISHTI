@@ -1,10 +1,9 @@
 import React, { createContext, useContext, useState } from "react";
 import { Grid, Container, Box, CssBaseline } from "@mui/material";
-import VerificationSection from "../components/Home/VerificationSection";
-import Copyrights from "../components/Home/VerificationProgressTracker/Copyrights";
 import { VerificationSteps } from "../utils/config";
 import { AlertInfo } from "../types/data-types";
 import AlertMessage from "../components/commons/AlertMessage";
+import DisplayActiveStep from "../components/Home/VerificationSection/DisplayActiveStep";
 
 let activeStep: number = 0;
 const setActiveStep = (newValue: number) => {
@@ -18,6 +17,7 @@ let alert: AlertInfo = { open: false };
 let setAlertInfo: React.Dispatch<React.SetStateAction<AlertInfo>> = (
   value
 ) => {};
+
 const AlertsContext = createContext({ alertInfo: alert, setAlertInfo });
 export const useAlertMessages = () => useContext(AlertsContext);
 
@@ -40,10 +40,7 @@ function Home(_props: any) {
         <Container maxWidth="lg" className="home-container">
           <Grid container spacing={4} justifyContent="center">
             <Grid item xs={12} md={6} className="tracker-container">
-              <VerificationSection />
-              {/* <Box mt={1} width="100%" textAlign="center">
-                <Copyrights />
-              </Box> */}
+              <DisplayActiveStep />
             </Grid>
           </Grid>
 
