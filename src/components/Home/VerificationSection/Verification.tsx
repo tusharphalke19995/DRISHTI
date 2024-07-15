@@ -9,7 +9,6 @@ import { VcStatus } from '../../../types/data-types';
 import { ScanStatusResult, VerificationSteps } from '../../../utils/config';
 import { decodeQrData } from '../../../utils/qr-utils';
 import { verify } from '../../../utils/verification-utils';
-import { error } from 'console';
 
 const Verification = memo(({showResult}: {showResult: (vcData: any, vcStatusData: VcStatus) => void}) => {
     const { setActiveStep } = useActiveStepContext();
@@ -21,7 +20,9 @@ const Verification = memo(({showResult}: {showResult: (vcData: any, vcStatusData
     const [qrData, setQrData] = useState("");
 
     useEffect(() => {
-        if (qrData === "" || qrData === 'invalid') {
+        if (qrData === "") return
+        
+        if (qrData === 'invalid' || qrData === 'error') {
             setIsVerified(false)
             setScanStatus(ScanStatusResult.CertificateInValid)
             return

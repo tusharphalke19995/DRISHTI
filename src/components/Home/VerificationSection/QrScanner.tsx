@@ -26,6 +26,7 @@ function QrScanner({setActiveStep, setQrData}: {
         <div ref={scannerRef}>
             <Scanner
                 onResult={(text, result) => {
+                    console.log("Scanner text", text)
                     setActiveStep(VerificationSteps.Verifying);
                     setQrData(text);
                 }}
