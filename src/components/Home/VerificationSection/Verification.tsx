@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { Backdrop, Box, Grid, Typography } from '@mui/material';
 import QrScanner from './QrScanner';
 import { useActiveStepContext } from '../../../pages/Home';
@@ -9,8 +9,9 @@ import { VcStatus } from '../../../types/data-types';
 import { ScanStatusResult, VerificationSteps } from '../../../utils/config';
 import { decodeQrData } from '../../../utils/qr-utils';
 import { verify } from '../../../utils/verification-utils';
+import { error } from 'console';
 
-const Verification = ({showResult}: {showResult: (vcData: any, vcStatusData: VcStatus) => void}) => {
+const Verification = memo(({showResult}: {showResult: (vcData: any, vcStatusData: VcStatus) => void}) => {
     const { setActiveStep } = useActiveStepContext();
     const [scanStatus, setScanStatus] = useState("")
     const [isVerified, setIsVerified] = useState(true);
@@ -20,7 +21,8 @@ const Verification = ({showResult}: {showResult: (vcData: any, vcStatusData: VcS
     const [qrData, setQrData] = useState("");
 
     useEffect(() => {
-        if (qrData === "") {
+        if (qrData === "" || qrData === 'invalid') {
+            setIsVerified(false)
             setScanStatus(ScanStatusResult.CertificateInValid)
             return
         };
@@ -39,29 +41,32 @@ const Verification = ({showResult}: {showResult: (vcData: any, vcStatusData: VcS
                             && !window.navigator.onLine) {
                             navigate('/offline');
                         }
+
                         setIsVerified(false)
-                        setScanStatus(ScanStatusResult.Failed)
-                        showResult(vc, status)
+                        setScanStatus(ScanStatusResult.CertificateValid)
+                        
+                        setTimeout(() => {
+                            showResult(vc, status)
+                        }, 500) 
                     })
                     .catch(error => {
                         console.error("Error occurred while verifying the VC: ", error);
                         console.error("Error code: ", error.code);
                         setIsVerified(false)
-                        setScanStatus(ScanStatusResult.Failed)
+                        setScanStatus(ScanStatusResult.CertificateInValid)
+                        
                         if (!window.navigator.onLine) {
                             navigate('/offline');
                             return;
                         }
-                    }).finally(() => {
-                        setIsVerified(false)
-                        setQrData("");
-                    });
+                    })
+            }).catch(error => {
+                setIsVerified(false)
+                setScanStatus(ScanStatusResult.CertificateInValid)
             })
         } catch (error) {
             setIsVerified(false)
             setScanStatus(ScanStatusResult.Failed)
-            console.error("Error occurred while reading the qrData: ", error);
-            setQrData("");
         }
     }, [qrData]);
 
@@ -95,6 +100,6 @@ const Verification = ({showResult}: {showResult: (vcData: any, vcStatusData: VcS
             </Grid>
         </Backdrop>
     );
-}
+})
 
 export default Verification;
