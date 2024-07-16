@@ -43,10 +43,11 @@ const VcDisplayCard = ({ vc, setActiveStep }: { vc: any, setActiveStep: SetActiv
           <Button
             variant="contained"
             color="primary"
-            size="large"
+            size="medium"
             fullWidth
             onClick={() => setActiveStep(VerificationSteps.ScanQrCodePrompt)}
             className="scan-button"
+            sx={{textTransform: 'none'}}
             startIcon={<img src={BtnQr} alt="QR Icon" />}
           >
             Scan Another QR Code
@@ -56,8 +57,9 @@ const VcDisplayCard = ({ vc, setActiveStep }: { vc: any, setActiveStep: SetActiv
           <Button
             variant="outlined"
             color="primary"
-            size="large"
+            size="medium"
             fullWidth
+            sx={{textTransform: 'none'}}
             onClick={() => setActiveStep(VerificationSteps.ScanQrCodePrompt)}
             className="scan-button"
             style={{ marginTop: 10 }}

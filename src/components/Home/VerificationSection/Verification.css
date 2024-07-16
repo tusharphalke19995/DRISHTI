@@ -1,8 +1,5 @@
 .verification-container {
-    padding: 78px 104px;
     text-align: center;
-    display: grid;
-    place-content: center;
   
     .verification-text {
       font: normal normal 600 20px/24px Inter;
@@ -10,7 +7,6 @@
   
       h5 {
         font-weight: 600;
-        margin-bottom: 8px;
       }
   
       body1 {
@@ -21,6 +17,7 @@
     .verification-box {
       width: 350px;
       height: 350px;
+      padding: 8px;
       background-image: url('../../../assets/scanner-ouline.svg');
       background-size: cover;
       display: grid;
@@ -32,6 +29,25 @@
       padding: 40px 20px;
   
       .verification-box {
+        width: 100%;
+        height: auto;
+        background-size: contain;
+      }
+    }
+
+    .verification-result {
+      align-items: center;
+      padding: 10px;
+      background-size: cover;
+      display: grid;
+      place-content: center;
+      margin: auto;
+    }
+
+    @media (max-width: 960px) {
+      padding: 40px 20px;
+  
+      .verification-result {
         width: 100%;
         height: auto;
         background-size: contain;

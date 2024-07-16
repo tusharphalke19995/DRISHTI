@@ -1,5 +1,3 @@
-import { ConstituteElementCaseDataType } from "../types/data-types";
-
 export const SAMPLE_DID =     {
     "@context": [
         "https://www.w3.org/ns/did/v1"
@@ -102,34 +100,3 @@ export const SAMPLE_WEB_DID_VC = {
         "policyExpiresOn": "2033-04-20T20:48:17.684Z"
     }
 };
-
-export const CONSTITUTION_ELEMENT_CASE_DATA: Array<ConstituteElementCaseDataType> = [
-    {
-        id: "1",
-        item: "A valid cheque must have been issued by the payer"
-    },
-    {
-        id: "2",
-        item: "The cheque must be for the discharge of a debt or other liability in whole or in part"
-    },
-    {
-        id: "3",
-        item: "The cheque was deposited with the bank either within three months from the date it was written or before it expires, whichever comes first"
-    },
-    {
-        id: "4",
-        item: "The cheque was returned by the bank as cheque amount was greater than the amount available in the bank of the issuer for disbursal"
-    },
-    {
-        id: "5",
-        item: "The payee issued a written notice to the payer within 30 days of receiving notice of the dishonour of the cheque"
-    },
-    {
-        id: "6",
-        item: "The payer should have failed to pay cheque amount within 15 days of receipt of above notice"
-    },
-    {
-        id: "7",
-        item: "The payee filed a complaint within a month from the date of expiry of 30 days for response notice "
-    }
-]
